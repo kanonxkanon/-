@@ -1,0 +1,5 @@
+C:\Users\iloop\Desktop\Console_Twitter\bin\Debug\Console_Twitter.exe
+C:\Users\iloop\Desktop\Console_Twitter\bin\Debug\Console_Twitter.pdb
+C:\Users\iloop\Desktop\Console_Twitter\obj\x86\Debug\Console_Twitter.csprojResolveAssemblyReference.cache
+C:\Users\iloop\Desktop\Console_Twitter\obj\x86\Debug\Console_Twitter.exe
+C:\Users\iloop\Desktop\Console_Twitter\obj\x86\Debug\Console_Twitter.pdb

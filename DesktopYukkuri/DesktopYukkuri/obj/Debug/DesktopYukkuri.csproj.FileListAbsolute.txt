@@ -1,0 +1,9 @@
+c:\users\iloop\documents\visual studio 2013\Projects\DesktopYukkuri\DesktopYukkuri\bin\Debug\DesktopYukkuri.exe.config
+c:\users\iloop\documents\visual studio 2013\Projects\DesktopYukkuri\DesktopYukkuri\bin\Debug\DesktopYukkuri.exe
+c:\users\iloop\documents\visual studio 2013\Projects\DesktopYukkuri\DesktopYukkuri\bin\Debug\DesktopYukkuri.pdb
+c:\users\iloop\documents\visual studio 2013\Projects\DesktopYukkuri\DesktopYukkuri\obj\Debug\DesktopYukkuri.csprojResolveAssemblyReference.cache
+c:\users\iloop\documents\visual studio 2013\Projects\DesktopYukkuri\DesktopYukkuri\obj\Debug\DesktopYukkuri.Form1.resources
+c:\users\iloop\documents\visual studio 2013\Projects\DesktopYukkuri\DesktopYukkuri\obj\Debug\DesktopYukkuri.Properties.Resources.resources
+c:\users\iloop\documents\visual studio 2013\Projects\DesktopYukkuri\DesktopYukkuri\obj\Debug\DesktopYukkuri.csproj.GenerateResource.Cache
+c:\users\iloop\documents\visual studio 2013\Projects\DesktopYukkuri\DesktopYukkuri\obj\Debug\DesktopYukkuri.exe
+c:\users\iloop\documents\visual studio 2013\Projects\DesktopYukkuri\DesktopYukkuri\obj\Debug\DesktopYukkuri.pdb
