@@ -50,6 +50,42 @@
             </summary>
             <returns>A new object that is a copy of this instance.</returns>
         </member>
+        <member name="P:CoreTweet.ConnectionOptions.ApiUrl">
+            <summary>
+            Gets or sets the URL of REST API.
+            <para>Default: <c>"https://api.twitter.com"</c></para>
+            </summary>
+        </member>
+        <member name="P:CoreTweet.ConnectionOptions.UploadUrl">
+            <summary>
+            Gets or sets the URL of upload API.
+            <para>Default: <c>"https://upload.twitter.com"</c></para>
+            </summary>
+        </member>
+        <member name="P:CoreTweet.ConnectionOptions.UserStreamUrl">
+            <summary>
+            Gets or sets the URL of User Streams API.
+            <para>Default: <c>"https://userstream.twitter.com"</c></para>
+            </summary>
+        </member>
+        <member name="P:CoreTweet.ConnectionOptions.SiteStreamUrl">
+            <summary>
+            Gets or sets the URL of Site Streams API.
+            <para>Default: <c>"https://sitestream.twitter.com"</c></para>
+            </summary>
+        </member>
+        <member name="P:CoreTweet.ConnectionOptions.StreamUrl">
+            <summary>
+            Gets or sets the URL of Public Streams API.
+            <para>Default: <c>"https://stream.twitter.com"</c></para>
+            </summary>
+        </member>
+        <member name="P:CoreTweet.ConnectionOptions.ApiVersion">
+            <summary>
+            Gets or sets the version of the Twitter API.
+            <para>Default: <c>"1.1"</c></para>
+            </summary>
+        </member>
         <member name="P:CoreTweet.ConnectionOptions.Timeout">
             <summary>
             Gets or sets the time-out value in milliseconds.
@@ -128,7 +164,7 @@
         </member>
         <member name="P:CoreTweet.Core.ITwitterResponse.Json">
             <summary>
-            Gets or sets the JSON of the response
+            Gets or sets the JSON of the response.
             </summary>
         </member>
         <member name="M:CoreTweet.TwitterException.Create(System.Net.WebException)">
@@ -155,7 +191,7 @@
         </member>
         <member name="P:CoreTweet.TwitterException.Json">
             <summary>
-            Gets or sets the JSON of the response
+            Gets or sets the JSON of the response.
             </summary>
         </member>
         <member name="T:CoreTweet.Core.ApiProviderBase">
@@ -365,7 +401,7 @@
         </member>
         <member name="P:CoreTweet.Core.ListedResponse`1.Json">
             <summary>
-            Gets or sets the JSON of the response
+            Gets or sets the JSON of the response.
             </summary>
         </member>
         <member name="P:CoreTweet.Core.ListedResponse`1.Count">
@@ -432,7 +468,7 @@
         </member>
         <member name="P:CoreTweet.Core.DictionaryResponse`2.Json">
             <summary>
-            Gets or sets the JSON of the response
+            Gets or sets the JSON of the response.
             </summary>
         </member>
         <member name="P:CoreTweet.Core.DictionaryResponse`2.Keys">
@@ -885,7 +921,7 @@
         </member>
         <member name="P:CoreTweet.Cursored`1.Json">
             <summary>
-            Gets or sets the JSON of the response
+            Gets or sets the JSON of the response.
             </summary>
         </member>
         <member name="T:CoreTweet.EnumerateMode">
@@ -970,7 +1006,7 @@
         </member>
         <member name="P:CoreTweet.Embed.Json">
             <summary>
-            Gets or sets the JSON of the response
+            Gets or sets the JSON of the response.
             </summary>
         </member>
         <member name="T:CoreTweet.Entities">
@@ -1023,6 +1059,16 @@
         <member name="P:CoreTweet.SymbolEntity.Text">
             <summary>
             Gets or sets the name of the hashtag, minus the leading '#' or '$' character.
+            </summary>
+        </member>
+        <member name="T:CoreTweet.HashtagEntity">
+            <summary>
+            Represents a &#35;hashtag object.
+            </summary>
+        </member>
+        <member name="T:CoreTweet.CashtagEntity">
+            <summary>
+            Represents a $cashtag object.
             </summary>
         </member>
         <member name="T:CoreTweet.MediaEntity">
@@ -1325,12 +1371,17 @@
         </member>
         <member name="F:CoreTweet.ErrorCode.AlreadyFavorited">
             <summary>
-            Undocumented: The authenticating user have already favorited specified status.
+            Undocumented: The authenticating user has already favorited specified status.
             </summary>
         </member>
         <member name="F:CoreTweet.ErrorCode.CannotFavoriteTweetsOfProtectedUsersYouAreNotFollowing">
             <summary>
             Undocumented: The authenticating user cannot favorite the protected user s/he doesn't follow.
+            </summary>
+        </member>
+        <member name="F:CoreTweet.ErrorCode.NoStatusFoundWithThatId">
+            <summary>
+            Undocumented: Cannot find specified status.
             </summary>
         </member>
         <member name="F:CoreTweet.ErrorCode.CannotSendDirectMessagesToUsersNotFollowingMe">
@@ -1355,7 +1406,7 @@
         </member>
         <member name="F:CoreTweet.ErrorCode.AlreadyFollowRequested">
             <summary>
-            Undocumented: The authenticating user have already requested to follow specified user.
+            Undocumented: The authenticating user has already requested to follow specified user.
             </summary>
         </member>
         <member name="F:CoreTweet.ErrorCode.UnableToFollowMorePeople">
@@ -1380,7 +1431,7 @@
         </member>
         <member name="F:CoreTweet.ErrorCode.CannotDeleteOtherUsersStatus">
             <summary>
-            Undocumented: The authenticating user cannot delete other users' status.
+            Undocumented: The authenticating user cannot delete another user's status.
             </summary>
         </member>
         <member name="F:CoreTweet.ErrorCode.OverStatusUpdateLimit">
@@ -1395,7 +1446,7 @@
         </member>
         <member name="F:CoreTweet.ErrorCode.StatusIsDuplicate">
             <summary>
-            The status text have been Tweeted already by the authenticated user.
+            The status text has been Tweeted already by the authenticated user.
             </summary>
         </member>
         <member name="F:CoreTweet.ErrorCode.StatusContainsMalware">
@@ -1468,6 +1519,11 @@
             The unmute request could not be completed because the authenticating user is not muting the specified user.
             </summary>
         </member>
+        <member name="F:CoreTweet.ErrorCode.AlreadyRetweetedThisTweet">
+            <summary>
+            Undocumented: The authenticating user has already retweeted specified status.
+            </summary>
+        </member>
         <member name="T:CoreTweet.Configurations">
             <summary>
             Represents the current configuration used by Twitter including twitter.com slugs which are not usernames, maximum photo resolutions, and t.co URL lengths.
@@ -1516,7 +1572,7 @@
         </member>
         <member name="P:CoreTweet.Configurations.Json">
             <summary>
-            Gets or sets the JSON of the response
+            Gets or sets the JSON of the response.
             </summary>
         </member>
         <member name="T:CoreTweet.Language">
@@ -1562,7 +1618,7 @@
         </member>
         <member name="P:CoreTweet.StringResponse.Json">
             <summary>
-            Gets or sets the JSON of the response
+            Gets or sets the JSON of the response.
             </summary>
         </member>
         <member name="T:CoreTweet.List">
@@ -1649,7 +1705,7 @@
         </member>
         <member name="P:CoreTweet.ListResponse.Json">
             <summary>
-            Gets or sets the JSON of the response
+            Gets or sets the JSON of the response.
             </summary>
         </member>
         <member name="T:CoreTweet.MediaUploadResult">
@@ -1685,7 +1741,7 @@
         </member>
         <member name="P:CoreTweet.MediaUploadResult.Json">
             <summary>
-            Gets or sets the JSON of the response
+            Gets or sets the JSON of the response.
             </summary>
         </member>
         <member name="T:CoreTweet.Image">
@@ -1831,7 +1887,7 @@
         </member>
         <member name="P:CoreTweet.PlaceResponse.Json">
             <summary>
-            Gets or sets the JSON of the response
+            Gets or sets the JSON of the response.
             </summary>
         </member>
         <member name="T:CoreTweet.BoundingBox">
@@ -1895,7 +1951,7 @@
         </member>
         <member name="P:CoreTweet.GeoResult.Json">
             <summary>
-            Gets or sets the JSON of the response
+            Gets or sets the JSON of the response.
             </summary>
         </member>
         <member name="T:CoreTweet.TrendsResult">
@@ -2113,12 +2169,27 @@
         </member>
         <member name="P:CoreTweet.SearchQueryResponse.Json">
             <summary>
-            Gets or sets the JSON of the response
+            Gets or sets the JSON of the response.
             </summary>
         </member>
         <member name="T:CoreTweet.Setting">
             <summary>
             Represents the settings including current trend, geo and sleep time information.
+            </summary>
+        </member>
+        <member name="P:CoreTweet.Setting.AllowContributorRequest">
+            <summary>
+            Gets or sets a value that determines who can send you a contributor request.
+            </summary>
+        </member>
+        <member name="P:CoreTweet.Setting.AllowDMsFrom">
+            <summary>
+            Gets or sets a value that determines who can DM a user. <c>anyone</c> or <c>following</c>
+            </summary>
+        </member>
+        <member name="P:CoreTweet.Setting.AllowDMGroupsFrom">
+            <summary>
+            Gets or sets a value that determines who can DM a user.
             </summary>
         </member>
         <member name="P:CoreTweet.Setting.AlwaysUseHttps">
@@ -2129,6 +2200,16 @@
         <member name="P:CoreTweet.Setting.IsDiscoverableByEmail">
             <summary>
             Gets or sets a value that determines if your friends can discover you by your email address.
+            </summary>
+        </member>
+        <member name="P:CoreTweet.Setting.IsDiscoverableByMobilePhone">
+            <summary>
+            Gets or sets a value that determines if your friends can discover you by your phone number.
+            </summary>
+        </member>
+        <member name="P:CoreTweet.Setting.DisplaySensitiveMedia">
+            <summary>
+            Gets or sets a value that determines if the user would like to see sensitive media.
             </summary>
         </member>
         <member name="P:CoreTweet.Setting.GeoEnabled">
@@ -2188,7 +2269,7 @@
         </member>
         <member name="P:CoreTweet.Setting.Json">
             <summary>
-            Gets or sets the JSON of the response
+            Gets or sets the JSON of the response.
             </summary>
         </member>
         <member name="T:CoreTweet.SleepTime">
@@ -2426,7 +2507,7 @@
         </member>
         <member name="P:CoreTweet.StatusResponse.Json">
             <summary>
-            Gets or sets the JSON of the response
+            Gets or sets the JSON of the response.
             </summary>
         </member>
         <member name="T:CoreTweet.Contributors">
@@ -2541,7 +2622,7 @@
         </member>
         <member name="P:CoreTweet.DirectMessageResponse.Json">
             <summary>
-            Gets or sets the JSON of the response
+            Gets or sets the JSON of the response.
             </summary>
         </member>
         <member name="T:CoreTweet.SearchResult">
@@ -2567,7 +2648,7 @@
         </member>
         <member name="P:CoreTweet.SearchResult.Json">
             <summary>
-            Gets or sets the JSON of the response
+            Gets or sets the JSON of the response.
             </summary>
         </member>
         <member name="P:CoreTweet.SearchResult.Item(System.Int32)">
@@ -2734,6 +2815,11 @@
             Gets or sets a value that determines if the user is a participant in Twitter's translator community.
             </summary>
         </member>
+        <member name="P:CoreTweet.User.IsTranslationEnabled">
+            <summary>
+            Gets or sets a value that determines if the user is a participant in Twitter's translator community.
+            </summary>
+        </member>
         <member name="P:CoreTweet.User.Language">
             <summary>
             <para>Gets or sets the BCP 47 code for the user's self-declared user interface language.</para>
@@ -2751,6 +2837,11 @@
             <para>Not necessarily a location nor parsable.</para>
             <para>This field will occasionally be fuzzily interpreted by the Search service.</para>
             <para>Nullable.</para>
+            </summary>
+        </member>
+        <member name="P:CoreTweet.User.IsMuting">
+            <summary>
+            Gets or sets a value that determines if the user is muted by authenticating user.
             </summary>
         </member>
         <member name="P:CoreTweet.User.Name">
@@ -2798,6 +2889,11 @@
         <member name="P:CoreTweet.User.ProfileLinkColor">
             <summary>
             Gets or sets the hexadecimal color the user has chosen to display links with in their Twitter UI.
+            </summary>
+        </member>
+        <member name="P:CoreTweet.User.ProfileLocation">
+            <summary>
+            Gets or sets the user-defined location for this account's profile.
             </summary>
         </member>
         <member name="P:CoreTweet.User.ProfileSidebarBorderColor">
@@ -2850,6 +2946,11 @@
             Gets or sets the number of tweets (including retweets) issued by the user.
             </summary>
         </member>
+        <member name="P:CoreTweet.User.IsSuspended">
+            <summary>
+            Gets or sets a value that determines if the user has been suspended by Twitter.
+            </summary>
+        </member>
         <member name="P:CoreTweet.User.TimeZone">
             <summary>
             <para>Gets or sets the string describes the time zone the user declares themselves within.</para>
@@ -2883,11 +2984,6 @@
             Gets or sets the content being withheld is the "status" or a "user."
             </summary>
         </member>
-        <member name="P:CoreTweet.User.IsMuting">
-            <summary>
-            Gets or sets a value that determines if the user is muted by authenticating user.
-            </summary>
-        </member>
         <member name="T:CoreTweet.UserResponse">
             <summary>
             Represents a user response with rate limit.
@@ -2900,7 +2996,7 @@
         </member>
         <member name="P:CoreTweet.UserResponse.Json">
             <summary>
-            Gets or sets the JSON of the response
+            Gets or sets the JSON of the response.
             </summary>
         </member>
         <member name="T:CoreTweet.Relationship">
@@ -2925,7 +3021,7 @@
         </member>
         <member name="P:CoreTweet.Relationship.Json">
             <summary>
-            Gets or sets the JSON of the response
+            Gets or sets the JSON of the response.
             </summary>
         </member>
         <member name="T:CoreTweet.RelationshipTarget">
@@ -3060,7 +3156,7 @@
         </member>
         <member name="P:CoreTweet.CategoryResponse.Json">
             <summary>
-            Gets or sets the JSON of the response
+            Gets or sets the JSON of the response.
             </summary>
         </member>
         <member name="T:CoreTweet.ProfileBannerSizes">
@@ -3105,7 +3201,7 @@
         </member>
         <member name="P:CoreTweet.ProfileBannerSizes.Json">
             <summary>
-            Gets or sets the JSON of the response
+            Gets or sets the JSON of the response.
             </summary>
         </member>
         <member name="T:CoreTweet.ProfileBannerSize">
@@ -3141,17 +3237,6 @@
         <member name="P:CoreTweet.UserEntities.Description">
             <summary>
             Gets or sets the entities for <see cref="P:CoreTweet.User.Description"/> field.
-            </summary>
-        </member>
-        <member name="T:CoreTweet.Property">
-            <summary>
-            Properties of CoreTweet.
-            </summary>
-        </member>
-        <member name="P:CoreTweet.Property.ApiVersion">
-            <summary>
-            <para>Gets or sets the version of the Twitter API.</para>
-            <para>To change this value is not recommended but allowed.</para>
             </summary>
         </member>
         <member name="T:CoreTweet.AsyncResponse">
@@ -3269,13 +3354,6 @@
             Encodes the specified text.
             </summary>
             <param name="text">The text.</param>
-            <returns>The encoded text.</returns>
-        </member>
-        <member name="M:CoreTweet.Request.Rfc3986EscapeDataString(System.String)">
-            <summary>
-            Encodes the given string based on RFC3986.
-            </summary>
-            <param name="text">The value.</param>
             <returns>The encoded text.</returns>
         </member>
         <member name="T:CoreTweet.MethodType">
@@ -8686,7 +8764,7 @@
             <para>The Result property on the task object returns the list.</para>
             </returns>
         </member>
-        <member name="M:CoreTweet.Rest.Members.DeleteAsync(System.Linq.Expressions.Expression{System.Func{System.String,System.Object}}[])">
+        <member name="M:CoreTweet.Rest.Members.DestroyAsync(System.Linq.Expressions.Expression{System.Func{System.String,System.Object}}[])">
             <summary>
             <para>Removes the specified member from the list as an asynchronous operation.</para>
             <para>The authenticated user must be the list's owner to remove members from the list.</para>
@@ -8706,28 +8784,7 @@
             <para>The Result property on the task object returns the list.</para>
             </returns>
         </member>
-        <member name="M:CoreTweet.Rest.Members.DeleteAsync(System.Collections.Generic.IDictionary{System.String,System.Object},System.Threading.CancellationToken)">
-            <summary>
-            <para>Removes the specified member from the list as an asynchronous operation.</para>
-            <para>The authenticated user must be the list's owner to remove members from the list.</para>
-            <para>Note: Either a list_id or a slug is required.</para>
-            <para>If providing a list_slug, an owner_screen_name or owner_id is also required.</para>
-            <para>Available parameters:</para>
-            <para>- <c>long</c> list_id (required)</para>
-            <para>- <c>string</c> slug (required)</para>
-            <para>- <c>long</c> user_id (required)</para>
-            <para>- <c>string</c> screen_name (required)</para>
-            <para>- <c>string</c> owner_screen_name (optional)</para>
-            <para>- <c>long</c> owner_id (optional)</para>
-            </summary>
-            <param name="parameters">The parameters.</param>
-            <param name="cancellationToken">The cancellation token.</param>
-            <returns>
-            <para>The task object representing the asynchronous operation.</para>
-            <para>The Result property on the task object returns the list.</para>
-            </returns>
-        </member>
-        <member name="M:CoreTweet.Rest.Members.DeleteAsync``1(``0,System.Threading.CancellationToken)">
+        <member name="M:CoreTweet.Rest.Members.DestroyAsync(System.Collections.Generic.IDictionary{System.String,System.Object},System.Threading.CancellationToken)">
             <summary>
             <para>Removes the specified member from the list as an asynchronous operation.</para>
             <para>The authenticated user must be the list's owner to remove members from the list.</para>
@@ -8748,7 +8805,28 @@
             <para>The Result property on the task object returns the list.</para>
             </returns>
         </member>
-        <member name="M:CoreTweet.Rest.Members.DeleteAllAsync(System.Linq.Expressions.Expression{System.Func{System.String,System.Object}}[])">
+        <member name="M:CoreTweet.Rest.Members.DestroyAsync``1(``0,System.Threading.CancellationToken)">
+            <summary>
+            <para>Removes the specified member from the list as an asynchronous operation.</para>
+            <para>The authenticated user must be the list's owner to remove members from the list.</para>
+            <para>Note: Either a list_id or a slug is required.</para>
+            <para>If providing a list_slug, an owner_screen_name or owner_id is also required.</para>
+            <para>Available parameters:</para>
+            <para>- <c>long</c> list_id (required)</para>
+            <para>- <c>string</c> slug (required)</para>
+            <para>- <c>long</c> user_id (required)</para>
+            <para>- <c>string</c> screen_name (required)</para>
+            <para>- <c>string</c> owner_screen_name (optional)</para>
+            <para>- <c>long</c> owner_id (optional)</para>
+            </summary>
+            <param name="parameters">The parameters.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>
+            <para>The task object representing the asynchronous operation.</para>
+            <para>The Result property on the task object returns the list.</para>
+            </returns>
+        </member>
+        <member name="M:CoreTweet.Rest.Members.DestroyAllAsync(System.Linq.Expressions.Expression{System.Func{System.String,System.Object}}[])">
             <summary>
             <para>Removes multiple members from a list, by specifying a comma-separated list of member ids or screen names as an asynchronous operation.</para>
             <para>The authenticated user must own the list to be able to remove members from it.</para>
@@ -8771,7 +8849,7 @@
             <para>The Result property on the task object returns the list.</para>
             </returns>
         </member>
-        <member name="M:CoreTweet.Rest.Members.DeleteAllAsync(System.Collections.Generic.IDictionary{System.String,System.Object},System.Threading.CancellationToken)">
+        <member name="M:CoreTweet.Rest.Members.DestroyAllAsync(System.Collections.Generic.IDictionary{System.String,System.Object},System.Threading.CancellationToken)">
             <summary>
             <para>Removes multiple members from a list, by specifying a comma-separated list of member ids or screen names as an asynchronous operation.</para>
             <para>The authenticated user must own the list to be able to remove members from it.</para>
@@ -8795,7 +8873,7 @@
             <para>The Result property on the task object returns the list.</para>
             </returns>
         </member>
-        <member name="M:CoreTweet.Rest.Members.DeleteAllAsync``1(``0,System.Threading.CancellationToken)">
+        <member name="M:CoreTweet.Rest.Members.DestroyAllAsync``1(``0,System.Threading.CancellationToken)">
             <summary>
             <para>Removes multiple members from a list, by specifying a comma-separated list of member ids or screen names as an asynchronous operation.</para>
             <para>The authenticated user must own the list to be able to remove members from it.</para>
@@ -9086,7 +9164,7 @@
             <param name="parameters">The parameters.</param>
             <returns>The list.</returns>
         </member>
-        <member name="M:CoreTweet.Rest.Members.Delete(System.Linq.Expressions.Expression{System.Func{System.String,System.Object}}[])">
+        <member name="M:CoreTweet.Rest.Members.Destroy(System.Linq.Expressions.Expression{System.Func{System.String,System.Object}}[])">
             <summary>
             <para>Removes the specified member from the list.</para>
             <para>The authenticated user must be the list's owner to remove members from the list.</para>
@@ -9103,7 +9181,7 @@
             <param name="parameters">The parameters.</param>
             <returns>The list.</returns>
         </member>
-        <member name="M:CoreTweet.Rest.Members.Delete(System.Collections.Generic.IDictionary{System.String,System.Object})">
+        <member name="M:CoreTweet.Rest.Members.Destroy(System.Collections.Generic.IDictionary{System.String,System.Object})">
             <summary>
             <para>Removes the specified member from the list.</para>
             <para>The authenticated user must be the list's owner to remove members from the list.</para>
@@ -9120,7 +9198,7 @@
             <param name="parameters">The parameters.</param>
             <returns>The list.</returns>
         </member>
-        <member name="M:CoreTweet.Rest.Members.Delete``1(``0)">
+        <member name="M:CoreTweet.Rest.Members.Destroy``1(``0)">
             <summary>
             <para>Removes the specified member from the list.</para>
             <para>The authenticated user must be the list's owner to remove members from the list.</para>
@@ -9137,7 +9215,7 @@
             <param name="parameters">The parameters.</param>
             <returns>The list.</returns>
         </member>
-        <member name="M:CoreTweet.Rest.Members.DeleteAll(System.Linq.Expressions.Expression{System.Func{System.String,System.Object}}[])">
+        <member name="M:CoreTweet.Rest.Members.DestroyAll(System.Linq.Expressions.Expression{System.Func{System.String,System.Object}}[])">
             <summary>
             <para>Removes multiple members from a list, by specifying a comma-separated list of member ids or screen names.</para>
             <para>The authenticated user must own the list to be able to remove members from it.</para>
@@ -9157,7 +9235,7 @@
             <param name="parameters">The parameters.</param>
             <returns>The list.</returns>
         </member>
-        <member name="M:CoreTweet.Rest.Members.DeleteAll(System.Collections.Generic.IDictionary{System.String,System.Object})">
+        <member name="M:CoreTweet.Rest.Members.DestroyAll(System.Collections.Generic.IDictionary{System.String,System.Object})">
             <summary>
             <para>Removes multiple members from a list, by specifying a comma-separated list of member ids or screen names.</para>
             <para>The authenticated user must own the list to be able to remove members from it.</para>
@@ -9177,7 +9255,7 @@
             <param name="parameters">The parameters.</param>
             <returns>The list.</returns>
         </member>
-        <member name="M:CoreTweet.Rest.Members.DeleteAll``1(``0)">
+        <member name="M:CoreTweet.Rest.Members.DestroyAll``1(``0)">
             <summary>
             <para>Removes multiple members from a list, by specifying a comma-separated list of member ids or screen names.</para>
             <para>The authenticated user must own the list to be able to remove members from it.</para>
@@ -9323,7 +9401,7 @@
             <para>The Result property on the task object returns the list.</para>
             </returns>
         </member>
-        <member name="M:CoreTweet.Rest.Subscribers.DeleteAsync(System.Linq.Expressions.Expression{System.Func{System.String,System.Object}}[])">
+        <member name="M:CoreTweet.Rest.Subscribers.DestroyAsync(System.Linq.Expressions.Expression{System.Func{System.String,System.Object}}[])">
             <summary>
             <para>Unsubscribes the authenticated user from the specified list as an asynchronous operation.</para>
             <para>Note: Either a list_id or a slug is required.</para>
@@ -9340,7 +9418,7 @@
             <para>The Result property on the task object returns the list.</para>
             </returns>
         </member>
-        <member name="M:CoreTweet.Rest.Subscribers.DeleteAsync(System.Collections.Generic.IDictionary{System.String,System.Object},System.Threading.CancellationToken)">
+        <member name="M:CoreTweet.Rest.Subscribers.DestroyAsync(System.Collections.Generic.IDictionary{System.String,System.Object},System.Threading.CancellationToken)">
             <summary>
             <para>Unsubscribes the authenticated user from the specified list as an asynchronous operation.</para>
             <para>Note: Either a list_id or a slug is required.</para>
@@ -9358,7 +9436,7 @@
             <para>The Result property on the task object returns the list.</para>
             </returns>
         </member>
-        <member name="M:CoreTweet.Rest.Subscribers.DeleteAsync``1(``0,System.Threading.CancellationToken)">
+        <member name="M:CoreTweet.Rest.Subscribers.DestroyAsync``1(``0,System.Threading.CancellationToken)">
             <summary>
             <para>Unsubscribes the authenticated user from the specified list as an asynchronous operation.</para>
             <para>Note: Either a list_id or a slug is required.</para>
@@ -9475,7 +9553,7 @@
             <param name="parameters">The parameters.</param>
             <returns>The list.</returns>
         </member>
-        <member name="M:CoreTweet.Rest.Subscribers.Delete(System.Linq.Expressions.Expression{System.Func{System.String,System.Object}}[])">
+        <member name="M:CoreTweet.Rest.Subscribers.Destroy(System.Linq.Expressions.Expression{System.Func{System.String,System.Object}}[])">
             <summary>
             <para>Unsubscribes the authenticated user from the specified list.</para>
             <para>Note: Either a list_id or a slug is required.</para>
@@ -9489,7 +9567,7 @@
             <param name="parameters">The parameters.</param>
             <returns>The list.</returns>
         </member>
-        <member name="M:CoreTweet.Rest.Subscribers.Delete(System.Collections.Generic.IDictionary{System.String,System.Object})">
+        <member name="M:CoreTweet.Rest.Subscribers.Destroy(System.Collections.Generic.IDictionary{System.String,System.Object})">
             <summary>
             <para>Unsubscribes the authenticated user from the specified list.</para>
             <para>Note: Either a list_id or a slug is required.</para>
@@ -9503,7 +9581,7 @@
             <param name="parameters">The parameters.</param>
             <returns>The list.</returns>
         </member>
-        <member name="M:CoreTweet.Rest.Subscribers.Delete``1(``0)">
+        <member name="M:CoreTweet.Rest.Subscribers.Destroy``1(``0)">
             <summary>
             <para>Unsubscribes the authenticated user from the specified list.</para>
             <para>Note: Either a list_id or a slug is required.</para>
@@ -12979,6 +13057,11 @@
             Provides event codes in Twitter Streaming API.
             </summary>
         </member>
+        <member name="F:CoreTweet.Streaming.EventCode.AccessRevoked">
+            <summary>
+            The user revokes his access token.
+            </summary>
+        </member>
         <member name="F:CoreTweet.Streaming.EventCode.Block">
             <summary>
             The user blocks a user.
@@ -13278,7 +13361,7 @@
         </member>
         <member name="T:CoreTweet.Streaming.DeleteMessage">
             <summary>
-            Represents a delete message of statuses and direct messages.
+            Represents a delete message of a status or a direct message.
             </summary>
         </member>
         <member name="M:CoreTweet.Streaming.DeleteMessage.GetMessageType">
@@ -13453,9 +13536,54 @@
             The event is about a Tweet.
             </summary>
         </member>
+        <member name="F:CoreTweet.Streaming.EventTargetType.AccessRevocation">
+            <summary>
+            The event is that the user revoked his access token.
+            </summary>
+        </member>
         <member name="F:CoreTweet.Streaming.EventTargetType.Null">
             <summary>
             The event is unknown.
+            </summary>
+        </member>
+        <member name="T:CoreTweet.Streaming.AccessRevocation">
+            <summary>
+            Represents a revoked token.
+            </summary>
+        </member>
+        <member name="P:CoreTweet.Streaming.AccessRevocation.ClientApplication">
+            <summary>
+            The client application.
+            </summary>
+        </member>
+        <member name="P:CoreTweet.Streaming.AccessRevocation.Token">
+            <summary>
+            The revoked access token.
+            </summary>
+        </member>
+        <member name="T:CoreTweet.Streaming.ClientApplication">
+            <summary>
+            Represents a client application.
+            </summary>
+        </member>
+        <member name="P:CoreTweet.Streaming.ClientApplication.Url">
+            <summary>
+            Gets or sets the URL of the application's publicly accessible home page.
+            </summary>
+        </member>
+        <member name="P:CoreTweet.Streaming.ClientApplication.Id">
+            <summary>
+            Gets or sets the ID.
+            </summary>
+        </member>
+        <member name="P:CoreTweet.Streaming.ClientApplication.ConsumerKey">
+            <summary>
+            Gets or sets the consumer key.
+            </summary>
+        </member>
+        <member name="P:CoreTweet.Streaming.ClientApplication.Name">
+            <summary>
+            Gets or sets the application name.
             </summary>
         </member>
         <member name="T:CoreTweet.Streaming.EventMessage">
@@ -13497,6 +13625,11 @@
         <member name="P:CoreTweet.Streaming.EventMessage.TargetList">
             <summary>
             Gets or sets the target List.
+            </summary>
+        </member>
+        <member name="P:CoreTweet.Streaming.EventMessage.TargetToken">
+            <summary>
+            Gets or sets the target access token.
             </summary>
         </member>
         <member name="P:CoreTweet.Streaming.EventMessage.CreatedAt">
@@ -13543,7 +13676,7 @@
         </member>
         <member name="T:CoreTweet.Streaming.RawJsonMessage">
             <summary>
-            Represents a raw JSON message.
+            Represents a raw JSON message. This message means an exception was thrown when parsing.
             </summary>
         </member>
         <member name="M:CoreTweet.Streaming.RawJsonMessage.GetMessageType">
@@ -13551,6 +13684,11 @@
             Gets the type of the message.
             </summary>
             <returns>The type of the message.</returns>
+        </member>
+        <member name="P:CoreTweet.Streaming.RawJsonMessage.Exception">
+            <summary>
+            Gets the exception when parsing.
+            </summary>
         </member>
         <member name="T:CoreTweet.Streaming.StreamingType">
             <summary>
@@ -13599,6 +13737,15 @@
             </summary>
             <param name="type">Type of streaming.</param>
             <param name="parameters">The parameters of streaming.</param>
+            <returns>The stream messages.</returns>
+        </member>
+        <member name="M:CoreTweet.Streaming.StreamingApi.StartStreamAsync(CoreTweet.Streaming.StreamingType,CoreTweet.Streaming.StreamingParameters,System.Threading.CancellationToken)">
+            <summary>
+            Starts the Twitter stream asynchronously.
+            </summary>
+            <param name="type">Type of streaming.</param>
+            <param name="parameters">The parameters of streaming.</param>
+            <param name="cancellationToken">The cancellation token.</param>
             <returns>The stream messages.</returns>
         </member>
         <member name="T:CoreTweet.Streaming.StreamingParameters">
