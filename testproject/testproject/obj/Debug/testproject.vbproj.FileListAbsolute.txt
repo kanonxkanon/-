@@ -1,1 +1,0 @@
-c:\users\iloop\documents\visual studio 2013\Projects\testproject\testproject\bin\Debug\testproject.exe.config
