@@ -126,7 +126,9 @@ namespace ConsoleApplication2
 
 
                     case "tw":
-                        tokens.Statuses.Update(status => cmArray[1]);
+                        //スペースや改行を変換して書き込み。
+                        tokens.Statuses.Update(  status => EncodeStrings(cmArray) );
+
                         Console.WriteLine("ok");
                         break;
 
@@ -171,6 +173,53 @@ namespace ConsoleApplication2
 
             }
         }
+
+
+        static public string ToShiftJis(string unicodeStrings)
+        {
+            Encoding unicode = Encoding.Unicode;
+            Encoding s_jis = Encoding.GetEncoding("shift_jis");
+            
+            byte[] unicodeByte = unicode.GetBytes(unicodeStrings);
+            byte[] s_jisByte = Encoding.Convert(unicode, s_jis, unicodeByte);
+            char[] s_jisChars = new char[s_jis.GetCharCount(s_jisByte, 0, s_jisByte.Length)];
+            
+            s_jis.GetChars(s_jisByte, 0, s_jisByte.Length, s_jisChars, 0);
+
+            return new string(s_jisChars);
+        } 
+
+
+        //スペースや、改行を変換
+        static string EncodeStrings(string[] arg) 
+        {
+            string str = "";
+            arg[0] = "";
+
+            
+            foreach(var st in arg)
+            {
+                string ss =st;
+                
+                //改行位置を測定
+                int idx =ss.IndexOf("\\n");
+
+                //\が存在したら別の改行文字を挟む。
+                if (idx != -1) 
+                {
+                    ss = ss.Replace("\\n", ((char)0x0a).ToString());
+                    //                    s.Insert(idx, n);
+                }
+                str += ss;
+                
+                //空白で配列になってるはずだから間違ってない。
+                str += " ";
+            }
+
+            return str;
+        }
+
+
         static void GetUserDetail(Tokens tokens, String userName)
         {
             UserResponse detail = tokens.Users.Show(id => userName);
@@ -179,7 +228,6 @@ namespace ConsoleApplication2
             follower = detail.FollowersCount.ToString();
             follow = detail.FriendsCount.ToString();
         }
-
 
 
         public static async void UserStreamAsync(Tokens t)
